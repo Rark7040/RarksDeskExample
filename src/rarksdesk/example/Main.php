@@ -11,13 +11,14 @@ use rarksdesk\Hook;
 final class Main extends PluginBase{
 
 	public function onEnable(){
+		$this->getServer()->getPluginManager()->registerEvents(new EventListener, $this);
 		Hook::register($this);
 		self::registerCommands();
 		self::startTask();
 	}
 
 	private static function registerCommands():void{
-		new ExampleCommand;
+		new RarksDeskCommand;
 	}
 
 	private static function startTask():void{
