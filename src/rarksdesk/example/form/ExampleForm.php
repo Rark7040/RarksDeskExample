@@ -2,6 +2,16 @@
 
 declare(strict_types = 1);
 
+namespace rarksdesk\example\form;
+
+use pocketmine\Player;
+use rarksdesk\form\CustomForm;
+use rarksdesk\form\element\{
+	Label,
+	Input
+};
+
+
 final class ExampleForm extends CustomForm{
 
 	public function __construct(){
@@ -13,6 +23,11 @@ final class ExampleForm extends CustomForm{
 				$player->sendMessage('on cancelled');
 			}
 		);
-		$this->addDropDown(new DropDown())
+		$this->addElement(
+			new Label('test text'),
+			new Input('input', '', '', function(Player $player, string $data){
+				$player->sendMessage($data);
+			}),
+		);
 	}
 }

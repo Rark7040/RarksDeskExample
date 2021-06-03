@@ -2,6 +2,14 @@
 
 declare(strict_types = 1);
 
+namespace rarksdesk\example;
+
+use pocketmine\event\{
+	Listener,
+	player\PlayerJoinEvent
+};
+use rarksdesk\permission\Tag;
+
 
 final class EventListener implements Listener{
 

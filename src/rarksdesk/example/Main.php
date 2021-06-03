@@ -18,10 +18,10 @@ final class Main extends PluginBase{
 	}
 
 	private static function registerCommands():void{
-		new RarksDeskCommand;
+		new command\RarksDeskCommand;
 	}
 
 	private static function startTask():void{
-		Hook::get()->getScheduler()->scheduleRepeatingTask(new DisplayScoreTask);
+		Hook::get()->getScheduler()->scheduleRepeatingTask(new task\DisplayScoreTask, 20);
 	}
 }

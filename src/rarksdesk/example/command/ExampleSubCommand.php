@@ -2,6 +2,13 @@
 
 declare(strict_types = 1);
 
+namespace rarksdesk\example\command;
+
+use pocketmine\command\CommandSender;
+use rarksdesk\command\SubCommand;
+use rarksdesk\example\form\ExampleForm;
+
+
 final class ExampleSubCommand extends SubCommand{
 
 	public function __construct(){

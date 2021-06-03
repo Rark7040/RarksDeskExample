@@ -2,6 +2,13 @@
 
 declare(strict_types = 1);
 
+namespace rarksdesk\example\task;
+
+use pocketmine\Server;
+use pocketmine\scheduler\Task;
+use rarksdesk\scoreboard\ScoreBoard;
+
+
 final class DisplayScoreTask extends Task{
 
 	private $board;

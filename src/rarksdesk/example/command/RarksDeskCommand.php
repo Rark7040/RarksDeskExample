@@ -2,6 +2,12 @@
 
 declare(strict_types = 1);
 
+namespace rarksdesk\example\command;
+
+use pocketmine\command\CommandSender;
+use rarksdesk\command\BaseCommand;
+
+
 final class RarksDeskCommand extends BaseCommand{
 
 	public function __construct(){
