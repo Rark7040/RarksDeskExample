@@ -6,8 +6,8 @@ namespace rarksdesk\example;
 
 use pocketmine\plugin\PluginBase;
 use rarksdesk\Hook;
-use rarksdesk\example\command\RarksDeskCommand;
-use rarksdesk\example\task\DisplayScoreTask;
+use rarksdeskexample\command\RarksDeskCommand;
+use rarksdeskexample\task\DisplayScoreTask;
 
 final class Main extends PluginBase{
 
