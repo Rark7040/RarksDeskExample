@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    if: "! contains(github.event.head_commit.message, '[ci skip]')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Syntax checking of php files
+        run: find ./src -name "*.php" -type f | xargs -l -P 0 php -l -f
+      - name: Build source code
+        run: php -dphar.readonly=0 ./build/make-phar.php enableCompressAll
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: phar
+          path: ./RarksDeskExample.phar
