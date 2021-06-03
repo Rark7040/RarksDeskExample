@@ -4,4 +4,4 @@ version: 1.0.0
 main: rarksdeskexample\Main
 author: RarkHopper
 virions:
-  - RarksDesk
+  - Commando
