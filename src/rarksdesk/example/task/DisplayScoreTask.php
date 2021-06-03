@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace rarksdesk\example\task;
+namespace rarksdeskexample\task;
 
 use pocketmine\Server;
 use pocketmine\scheduler\Task;

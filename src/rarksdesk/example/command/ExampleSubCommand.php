@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace rarksdesk\example\command;
+namespace rarksdeskexample\command;
 
 use pocketmine\command\CommandSender;
 use rarksdesk\command\SubCommand;

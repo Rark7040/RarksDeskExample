@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace rarksdesk\example\form;
+namespace rarksdeskexample\form;
 
 use pocketmine\Player;
 use rarksdesk\form\CustomForm;

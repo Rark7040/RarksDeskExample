@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace rarksdesk\example;
+namespace rarksdeskexample;
 
 use pocketmine\plugin\PluginBase;
 use rarksdesk\Hook;
