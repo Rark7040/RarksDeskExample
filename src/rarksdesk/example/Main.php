@@ -6,7 +6,8 @@ namespace rarksdesk\example;
 
 use pocketmine\plugin\PluginBase;
 use rarksdesk\Hook;
-
+use rarksdesk\example\command\RarksDeskCommand;
+use rarksdesk\example\task\DisplayScoreTask;
 
 final class Main extends PluginBase{
 
@@ -18,10 +19,10 @@ final class Main extends PluginBase{
 	}
 
 	private static function registerCommands():void{
-		new command\RarksDeskCommand;
+		new RarksDeskCommand;
 	}
 
 	private static function startTask():void{
-		Hook::get()->getScheduler()->scheduleRepeatingTask(new task\DisplayScoreTask, 20);
+		Hook::get()->getScheduler()->scheduleRepeatingTask(new DisplayScoreTask, 20);
 	}
 }
