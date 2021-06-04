@@ -4,5 +4,5 @@ branches:
 projects:
   RarksDeskExample:
     libs:
-      - src: rarksdesk\RarksDesk
+      - src: Rark7040\RarksDesk\RarksDesk
         version: 1.0.0
