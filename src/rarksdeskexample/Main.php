@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace rarksdeskexample;
 
-require_once __DIR__.'\addon\RarksDesk.phar\rarksdesk\Hook.php';
+require_once 'phar://'.__DIR__.'/addon/RarksDesk.phar/rarksdesk/Hook.php';
 use pocketmine\plugin\PluginBase;
 use rarksdesk\Hook;
 use rarksdeskexample\command\RarksDeskCommand;
