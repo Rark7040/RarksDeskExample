@@ -1,0 +1,8 @@
+build-by-default: true
+branches:
+  - master
+projects:
+  RarksDeskExample:
+    libs:
+      - src: Rark7040\RarksDesk\RarksDesk
+        version: 1.0.0
