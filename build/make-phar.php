@@ -7,21 +7,12 @@ if(file_exists($file_phar)){
 	echo PHP_EOL;
 	Phar::unlinkArchive($file_phar);
 }
-
 $files = [];
 $dir = getcwd().DIRECTORY_SEPARATOR;
 
-$exclusions = ['github','.gitignore','composer.json','composer.lock','build','.git'];
-
 foreach(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($dir)) as $path => $file){
-	$bool = true;
-
-	foreach($exclusions as $exclusion){
-		if(strpos($path,$exclusion) !== false) $bool = false;
-	}
-	if(!$bool) continue;
-	if($file->isFile() === false) continue;
-	$files[str_replace($dir,'',$path)] = $path;
+	if(strpos($path, '.git') !== false or !$file->isFile()) continue;
+	$files[str_replace($dir, '', $path)] = $path;
 }
 
 echo 'Compressing...'.PHP_EOL;
@@ -37,10 +28,8 @@ if(isset($argv[1]) and $argv[1] === 'enableCompressAll'){
 }else{
 	foreach($phar as $file => $finfo){
 		/** @var \PharFileInfo $finfo */
-		if($finfo->getSize() > (1024 * 512)){
-			$finfo->compress(\Phar::GZ);
-		}
+		if($finfo->getSize() > (1024 * 512)) $finfo->compress(\Phar::GZ);
 	}
 }
 $phar->stopBuffering();
-echo 'end.'.PHP_EOL;
+echo 'end'.PHP_EOL;
